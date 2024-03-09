@@ -7,41 +7,50 @@
 						<h4>Register</h4>
 					</div>
 					<div class="card-body">
-						<form method="POST">
+						<form class="form" action="<?= site_url('auth/registerAction') ?>" method="POST">
 							<div class="row">
 								<div class="form-group col-6">
-									<label for="first_name">First Name</label>
-									<input id="first_name" type="text" class="form-control" name="first_name" autofocus>
+									<label for="nama">Nama</label>
+									<input id="nama" type="text" class="form-control" name="nama" autofocus>
+									<?= form_error('nama', '<div class="text-sm text-danger">', '</div>') ?>
 								</div>
 								<div class="form-group col-6">
-									<label for="last_name">Last Name</label>
-									<input id="last_name" type="text" class="form-control" name="last_name">
+									<label for="username">Username</label>
+									<input id="username" type="text" class="form-control" name="username">
+									<?= form_error('username', '<div class="text-sm text-danger">', '</div>') ?>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="email">Email</label>
-								<input id="email" type="email" class="form-control" name="email">
-								<div class="invalid-feedback">
-								</div>
+								<label for="alamat">Alamat</label>
+								<input id="alamat" type="alamat" class="form-control" name="alamat">
+								<?= form_error('alamat', '<div class="text-sm text-danger">', '</div>') ?>
 							</div>
 							<div class="row">
+								<div class="form-group col-6">
+									<label for="gender" class="d-block">Gender</label>
+									<select name="gender" id="gender" class="form-control select2">
+										<option value="">Pilih Gender</option>
+										<option value="Pria">Pria</option>
+										<option value="Wanita">Wanita</option>
+									</select>
+									<?= form_error('gender', '<div class="text-sm text-danger">', '</div>') ?>
+								</div>
 								<div class="form-group col-6">
 									<label for="password" class="d-block">Password</label>
-									<input id="password" type="password" class="form-control pwstrength" data-indicator="pwindicator" name="password">
-									<div id="pwindicator" class="pwindicator">
-										<div class="bar"></div>
-										<div class="label"></div>
-									</div>
-								</div>
-								<div class="form-group col-6">
-									<label for="password2" class="d-block">Password Confirmation</label>
-									<input id="password2" type="password" class="form-control" name="password-confirm">
+									<input id="password" type="password" class="form-control" name="password">
+									<?= form_error('password', '<div class="text-sm text-danger">', '</div>') ?>
 								</div>
 							</div>
-							<div class="form-group">
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" name="agree" class="custom-control-input" id="agree">
-									<label class="custom-control-label" for="agree">I agree with the terms and conditions</label>
+							<div class="row">
+								<div class="form-group col-6">
+									<label for="no_telepon" class="d-block">No. Telepon</label>
+									<input id="no_telepon" type="no_telepon" class="form-control" name="no_telepon">
+									<?= form_error('no_telepon', '<div class="text-sm text-danger">', '</div>') ?>
+								</div>
+								<div class="form-group col-6">
+									<label for="no_ktp" class="d-block">No. KTP</label>
+									<input id="no_ktp" type="no_ktp" class="form-control" name="no_ktp">
+									<?= form_error('no_ktp', '<div class="text-sm text-danger">', '</div>') ?>
 								</div>
 							</div>
 							<div class="form-group">

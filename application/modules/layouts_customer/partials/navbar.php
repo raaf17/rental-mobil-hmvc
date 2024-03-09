@@ -20,15 +20,21 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="<?= base_url('auth/register') ?>" class="nav-link">Register</a>
-                </li>
-                <!-- <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="dropdown-2" , data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown-2">
-                        <a href="" class="dropdown-item">Logout</a>
-                    </div>
-                </li> -->
+                <?php if (!$this->session->userdata('nama')) : ?>
+                    <li class="nav-item">
+                        <a href="<?= base_url('auth/login') ?>" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url('auth/register') ?>" class="nav-link">Register</a>
+                    </li>
+                <?php else : ?>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="dropdown-2" , data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $this->session->userdata("nama") ?></a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-2">
+                            <a href="<?= base_url('auth/logout') ?>" class="dropdown-item">Logout</a>
+                        </div>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
