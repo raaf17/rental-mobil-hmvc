@@ -21,16 +21,14 @@
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="<?= base_url('login') ?>" class="nav-link">Login</a>
+                    <a href="<?= base_url('auth/register') ?>" class="nav-link">Register</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="dropdown-2" , data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu" aria-labelledby="dropdown-2">
-                        <a href="<?= base_url('profile') ?>" class="dropdown-item">Profile</a>
-                        <a href="<?= base_url('myorder') ?>" class="dropdown-item">Orders</a>
-                        <a href="<?= base_url('logout') ?>" class="dropdown-item">Logout</a>
+                        <a href="" class="dropdown-item">Logout</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
