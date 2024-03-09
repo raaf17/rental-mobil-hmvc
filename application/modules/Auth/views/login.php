@@ -8,7 +8,7 @@
                     </div>
 
                     <div class="card-body">
-                        <?php if ($this->session->flashdata('pesan')) : ?>
+                        <?php if ($this->session->flashdata('pesan_login')) : ?>
                             <div class="alert alert-danger alert-dismissible show fade">
                                 <div class="alert-body">
                                     <button class="close" data-dismiss="alert">

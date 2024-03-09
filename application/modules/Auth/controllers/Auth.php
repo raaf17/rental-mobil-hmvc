@@ -95,6 +95,37 @@ class Auth extends CI_Controller
         }
     }
 
+    public function gantiPassword()
+    {
+        $data = [
+            'title' => 'Ganti Password',
+            'content' => 'gantiPassword'
+        ];
+
+        $this->load->view('../../layouts_admin/main', $data);
+    }
+
+    public function changePasswordAction()
+    {
+        $new_password = $this->input->post('new_password');
+        $repeat_password = $this->input->post('repeat_password');
+
+        $this->form_validation->set_rules('new_password', 'Password Baru', 'required|matches[repeat_password]');
+        $this->form_validation->set_rules('repeat_password', 'Ulangi Password', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->gantiPassword();
+        } else {
+            $data = array('password' => md5($new_password));
+            $id = array('id_customer' => $this->session->userdata('id_customer'));
+
+            $this->customer->update_password($id, $data, 'customer');
+            $this->session->set_flashdata('pesan_login', 'Password Berhasil diupdate, Silahkan Login!');
+
+            redirect('auth/login');
+        }
+    }
+
     public function logout()
     {
         $this->session->sess_destroy();

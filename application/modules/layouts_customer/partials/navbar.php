@@ -31,6 +31,7 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" id="dropdown-2" , data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $this->session->userdata("nama") ?></a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-2">
+                            <a href="<?= base_url('') ?>" class="dropdown-item">Ganti Password</a>
                             <a href="<?= base_url('auth/logout') ?>" class="dropdown-item">Logout</a>
                         </div>
                     </li>

@@ -15,13 +15,10 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, <?= $this->session->userdata('nama'); ?></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="<?= site_url('home') ?>" class="dropdown-item has-icon">
-                    <i class="far fa-user"></i> Beranda
-                </a>
+                <a href="<?= site_url('home') ?>" class="dropdown-item has-icon"><i class="far fa-user"></i> Beranda</a>
+                <a href="<?= site_url('auth/gantiPassword') ?>" class="dropdown-item has-icon"><i class="far fa-user"></i> Ganti Password</a>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                <a href="#" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </li>
     </ul>

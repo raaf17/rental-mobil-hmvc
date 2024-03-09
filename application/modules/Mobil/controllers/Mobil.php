@@ -64,13 +64,13 @@ class Mobil extends CI_Controller
             }
 
             $data = array(
-                'kode_tipe' => $kode_tipe,
-                'merk'      => $merk,
-                'no_plat'   => $no_plat,
-                'warna'     => $warna,
-                'tahun'     => $tahun,
-                'status'    => $status,
-                'gambar'    => $gambar,
+                'kode_tipe'     => $kode_tipe,
+                'merk'          => $merk,
+                'no_plat'       => $no_plat,
+                'warna'         => $warna,
+                'tahun'         => $tahun,
+                'status'        => $status,
+                'gambar'        => $gambar,
             );
 
             $this->mobil->insert_data($data, 'mobil');
@@ -85,7 +85,8 @@ class Mobil extends CI_Controller
         $where = array('id_mobil' => $id);
         $data = [
             'title'         => 'Edit Data Mobil',
-            'mobil'         => $this->db->query("SELECT * FROM mobil mb, tipe tp WHERE mb.kode_tipe=tp.kode_tipe AND mb.id_mobil = '$id'")->result(),
+            'mobil'         => $this->db->query("SELECT * FROM mobil mb, tipe tp 
+                                                WHERE mb.kode_tipe=tp.kode_tipe AND mb.id_mobil = '$id'")->result(),
             'tipe'          => $this->tipe->get_data('tipe')->result(),
             'content'       => 'edit'
         ];
@@ -123,12 +124,12 @@ class Mobil extends CI_Controller
             }
 
             $data = array(
-                'kode_tipe' => $kode_tipe,
-                'merk'      => $merk,
-                'no_plat'   => $no_plat,
-                'warna'     => $warna,
-                'tahun'     => $tahun,
-                'status'    => $status,
+                'kode_tipe'     => $kode_tipe,
+                'merk'          => $merk,
+                'no_plat'       => $no_plat,
+                'warna'         => $warna,
+                'tahun'         => $tahun,
+                'status'        => $status,
             );
 
             $where = array('id_mobil'  => $id);

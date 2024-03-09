@@ -23,6 +23,7 @@
             <li class="<?= $title === 'Transaksi' ? 'active' : '' ?>"><a class="nav-link" href="<?= site_url('transaksi') ?>"><i class="fas fa-shuffle"></i> <span>Transaksi</span></a></li>
             <li class="<?= $title === 'Laporan' ? 'active' : '' ?>"><a class="nav-link" href="<?= site_url('laporan') ?>"><i class="fas fa-newspaper"></i> <span>Laporan</span></a></li>
             <li class="menu-header">Ekstra</li>
+            <li class="<?= $title === 'Settings' ? 'active' : '' ?>"><a class="nav-link" href="<?= site_url('settings') ?>"><i class="fas fa-gear"></i> <span>Settings</span></a></li>
             <li><a class="nav-link text-danger" href="<?= site_url('auth/logout') ?>"><i class="fas fa-right-from-bracket"></i> <span>Logout</span></a></li>
         </ul>
     </aside>

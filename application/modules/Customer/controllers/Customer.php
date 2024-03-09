@@ -13,7 +13,7 @@ class Customer extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Data Customer',
+            'title'         => 'Data Customer',
             'data_customer' => $this->customer->get_data('customer')->result(),
             'content' => 'index'
         ];
@@ -69,7 +69,7 @@ class Customer extends CI_Controller
         $where = array('id_customer' => $id);
         $data = [
             'title'         => 'Edit Data Customer',
-            'data_customer'         => $this->db->query("SELECT * FROM customer WHERE id_customer = '$id'")->result(),
+            'data_customer' => $this->db->query("SELECT * FROM customer WHERE id_customer = '$id'")->result(),
             'content'       => 'edit'
         ];
 

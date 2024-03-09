@@ -1,4 +1,5 @@
-<?php 
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Home extends CI_Controller
 {
@@ -12,9 +13,9 @@ class Home extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Beranda',
-            'mobil' => $this->mobil->get_data('mobil')->result(),
-            'content' => 'index'
+            'title'     => 'Beranda',
+            'mobil'     => $this->mobil->get_data('mobil')->result(),
+            'content'   => 'index'
         ];
 
         $this->load->view('../../layouts_customer/main', $data);
@@ -23,9 +24,9 @@ class Home extends CI_Controller
     public function detailMobil($id)
     {
         $data = [
-            'title' => 'Detail Mobil',
-            'mobil' => $this->mobil->ambil_id_mobil($id),
-            'content' => 'detail'
+            'title'     => 'Detail Mobil',
+            'mobil'     => $this->mobil->ambil_id_mobil($id),
+            'content'   => 'detail'
         ];
 
         $this->load->view('../../layouts_customer/main', $data);

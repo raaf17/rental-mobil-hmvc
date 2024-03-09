@@ -1,4 +1,5 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Tipe extends CI_Controller
 {
@@ -42,8 +43,8 @@ class Tipe extends CI_Controller
             $nama_tipe      = $this->input->post('nama_tipe');
 
             $data = array(
-                'kode_tipe' => $kode_tipe,
-                'nama_tipe'      => $nama_tipe,
+                'kode_tipe'     => $kode_tipe,
+                'nama_tipe'     => $nama_tipe,
             );
 
             $this->tipe->insert_data($data, 'tipe');
@@ -77,11 +78,11 @@ class Tipe extends CI_Controller
             $nama_tipe      = $this->input->post('nama_tipe');
 
             $data = array(
-                'kode_tipe' => $kode_tipe,
-                'nama_tipe' => $nama_tipe,
+                'kode_tipe'     => $kode_tipe,
+                'nama_tipe'     => $nama_tipe,
             );
 
-            $where = array('id_tipe'  => $id);
+            $where = array('id_tipe' => $id);
             $this->tipe->update_data('tipe', $data, $where);
             $this->session->set_flashdata('pesan', 'Data Berhasil diupdate');
 
@@ -91,7 +92,7 @@ class Tipe extends CI_Controller
 
     public function hapusTipe($id)
     {
-        $where = array('id_tipe'  => $id);
+        $where = array('id_tipe' => $id);
         $this->tipe->delete_data($where, 'tipe');
         $this->session->set_flashdata('pesan', 'Data Berhasil dihapus');
 
